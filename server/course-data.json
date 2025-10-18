@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Data Structures and Algorithms",
+    "instructor": "Emily Clark",
+    "description": "Understand core data structures and implement efficient algorithms",
+    "price": 4550
+  },
+  {
+    "name": "Operating Systems",
+    "instructor": "Michael Davis",
+    "description": "Explore process management, scheduling, and concurrency in OS",
+    "price": 5685
+  },
+  {
+    "name": "Database Management Systems",
+    "instructor": "Sophia Turner",
+    "description": "Learn SQL, normalization, and database design fundamentals",
+    "price": 3735
+  },
+  {
+    "name": "Artificial Intelligence",
+    "instructor": "Dr. Alan Brooks",
+    "description": "Introduction to intelligent systems, search algorithms, and knowledge representation",
+    "price": 6630
+  },
+  {
+    "name": "Machine Learning",
+    "instructor": "Olivia White",
+    "description": "Master supervised and unsupervised learning with Python",
+    "price": 7050
+  },
+  {
+    "name": "Computer Architecture",
+    "instructor": "Daniel Martinez",
+    "description": "Study CPU design, memory hierarchy, and instruction execution",
+    "price": 5350
+  },
+  {
+    "name": "Cybersecurity Fundamentals",
+    "instructor": "Ava Johnson",
+    "description": "Learn risk management, encryption, and network protection strategies",
+    "price": 5980
+  },
+  {
+    "name": "Cloud Computing",
+    "instructor": "Ethan Walker",
+    "description": "Understand virtualization, AWS foundations, and distributed systems",
+    "price": 7387
+  },
+  {
+    "name": "Software Engineering",
+    "instructor": "Rachel Nguyen",
+    "description": "Learn agile principles, design patterns, and SDLC practices",
+    "price": 4876
+  },
+  {
+    "name": "Computer Graphics",
+    "instructor": "Liam Patel",
+    "description": "Build visual applications using OpenGL and 3D rendering techniques",
+    "price": 5518
+  }
+]
