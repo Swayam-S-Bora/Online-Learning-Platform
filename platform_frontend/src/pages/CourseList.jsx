@@ -1,39 +1,48 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../api/axios';  // Your custom axios with interceptor
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
+  const [error, setError] = useState('');
+  
   useEffect(() => {
-    axios.get('/api/courses')
-      .then(res => {
-        if (res.data.success) {
-          setCourses(res.data.data);
-        } else {
-          setError('Failed to load courses');
-        }
-      })
-      .catch(() => setError('Error fetching courses'))
-      .finally(() => setLoading(false));
+    const fetchCourses = async () => {
+      try {
+        const res = await axios.get('/courses');
+        setCourses(res.data.data || []);
+      } catch (err) {
+        setError(err.response?.data?.msg || 'Error loading courses');
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCourses();
   }, []);
-
+  
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    window.location.href = '/login';
+  };
+  
   if (loading) return <p>Loading courses...</p>;
-  if (error) return <p>{error}</p>;
-
+  if (error) return <p style={{ color: 'red' }}>{error}</p>;
+  
   return (
-    <div className="course-list">
-      <h2>Available Courses</h2>
+    <div style={{ maxWidth: 600, margin: '1rem auto', fontFamily: 'Arial' }}>
+      <h2>Course List</h2>
+      <button onClick={handleLogout}>Logout</button>
       <ul>
-        {courses.map((course) => (
-          <li key={course._id || course.id}>
-            <h3>{course.name}</h3>
-            <p><b>Instructor:</b> {course.instructor}</p>
-            <p>{course.description}</p>
-            <p><b>Price:</b> ${course.price}</p>
-          </li>
-        ))}
+        {courses.length === 0 ? (
+          <li>No courses found</li>
+        ) : (
+          courses.map((course) => (
+            <li key={course._id}>
+              <strong>{course.title}</strong>
+              <p>{course.description}</p>
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );
