@@ -1,7 +1,10 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-require('dotenv').config();
+const redis = require('./redisClient');
+const authRoutes = require('./routes/auth');
+const authMiddleware = require('./middleware/auth');
 
 const app = express();
 
@@ -38,6 +41,28 @@ app.get('/api/courses', async (req, res) => {
   }
 });
 
+// Set and get number of live participants in a class
+app.post('/api/live-class/:sessionId/join', async (req, res) => {
+  const { sessionId } = req.params;
+  await redis.incr(`live:${sessionId}:participants`);
+  const count = await redis.get(`live:${sessionId}:participants`);
+  res.json({ success: true, participants: Number(count) });
+});
+
+app.get('/api/live-class/:sessionId/participants', async (req, res) => {
+  const { sessionId } = req.params;
+  const count = await redis.get(`live:${sessionId}:participants`);
+  res.json({ success: true, participants: Number(count || 0) });
+});
+
+
+app.use('/api/auth', authRoutes);
+
+// Example protected route
+app.get('/api/protected', authMiddleware, (req, res) => {
+  res.json({ msg: `Welcome user ${req.user.id}` });
+});
+
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
