@@ -187,7 +187,7 @@ Course relationships are stored as a directed graph:
 
 ## Seed Data
 
-- The project includes 10 pre-configured courses in `server/data/course-data.json`
-- Prerequisite relationships are defined in `server/data/course-prereq.json`
+- The project includes 10 pre-configured courses in [`server/data/course-data.json`](server/data/course-data.json)
+- Prerequisite relationships are defined in [`server/data/course-prereq.json`](server/data/course-prereq.json)
 
 **Note**: Make sure all database services (MongoDB, Redis, Neo4j) are running before starting the application.
