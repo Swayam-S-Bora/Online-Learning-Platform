@@ -5,7 +5,7 @@ const Course = require('./models/course');
 async function seedCourses() {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    const coursesData = JSON.parse(fs.readFileSync('./course-data.json', 'utf-8'));
+    const coursesData = JSON.parse(fs.readFileSync('./data/course-data.json', 'utf-8'));
 
     await Course.deleteMany({}); // Clear existing courses
     await Course.insertMany(coursesData);

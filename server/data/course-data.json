@@ -1,0 +1,82 @@
+[
+  {
+    "courseCode": "CS101",
+    "title": "Introduction to Java Programming",
+    "description": "Learn the fundamentals of Java.",
+    "instructor": "Anita Sharma",
+    "duration": "6",
+    "price": 5000
+  },
+  {
+    "courseCode": "CS102",
+    "title": "Object-Oriented Programming with Java",
+    "description": "Deep dive into object-oriented programming principles using Java.",
+    "instructor": "Rahul Mehta",
+    "duration": "4",
+    "price": 4000
+  },
+  {
+    "courseCode": "CS103",
+    "title": "Relational Databases and SQL",
+    "description": "Understand relational databases and learn how to query them using SQL.",
+    "instructor": "Preeti Nair",
+    "duration": "5",
+    "price": 4500
+  },
+  {
+    "courseCode": "CS104",
+    "title": "NoSQL Databases: Concepts and Applications",
+    "description": "Explore non-relational databases and their applications in modern software development.",
+    "instructor": "Karan Verma",
+    "duration": "3",
+    "price": 3500
+  },
+  {
+    "courseCode": "CS105",
+    "title": "Data Structures and Algorithms",
+    "description": "Master data structures and algorithms to improve problem-solving and coding skills.",
+    "instructor": "Megha Rathi",
+    "duration": "8",
+    "price": 6000
+  },
+  {
+    "courseCode": "CS106",
+    "title": "Back-End Development with Spring Boot",
+    "description": "Build robust back-end applications with Spring Boot and related technologies.",
+    "instructor": "Arvind Menon",
+    "duration": "6",
+    "price": 5500
+  },
+  {
+    "courseCode": "CS107",
+    "title": "Android App Development Using Java",
+    "description": "Develop Android apps using Java, covering UI design, data storage, and publishing.",
+    "instructor": "Neha Kapoor",
+    "duration": "7",
+    "price": 6500
+  },
+  {
+    "courseCode": "CS108",
+    "title": "Frontend Web Development with HTML, CSS, and JavaScript",
+    "description": "Learn front-end web development with HTML5, CSS3, and modern JavaScript.",
+    "instructor": "Siddharth Rao",
+    "duration": "5",
+    "price": 4000
+  },
+  {
+    "courseCode": "CS109",
+    "title": "Working with MongoDB",
+    "description": "Get started with MongoDB, a leading NoSQL database, and learn to integrate it with applications.",
+    "instructor": "Tanvi Iyer",
+    "duration": "4",
+    "price": 3800
+  },
+  {
+    "courseCode": "CS110",
+    "title": "Full-Stack Web Development with MERN",
+    "description": "Build full-stack web applications using MongoDB, Express.js, React, and Node.js.",
+    "instructor": "Ravi Singh",
+    "duration": "10",
+    "price": 7500
+  }
+]

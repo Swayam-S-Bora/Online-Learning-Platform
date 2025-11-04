@@ -1,8 +1,8 @@
-require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const redis = require('./redisClient');
+const neo4jCoursesRoutes = require('./routes/neoCourses');
 const authRoutes = require('./routes/auth');
 const authMiddleware = require('./middleware/auth');
 
@@ -41,6 +41,16 @@ app.get('/api/courses', async (req, res) => {
   }
 });
 
+app.post('/courses', async (req, res) => {
+  try {
+    const { courseCode, title, description, instructor, duration, price } = req.body;
+    const course = await Course.create({ courseCode, title, description, instructor, duration, price });
+    res.status(201).json(course);
+  } catch (err) {
+    res.status(400).json({ msg: err.message });
+  }
+});
+
 // Set and get number of live participants in a class
 app.post('/api/live-class/:sessionId/join', async (req, res) => {
   const { sessionId } = req.params;
@@ -62,6 +72,9 @@ app.use('/api/auth', authRoutes);
 app.get('/api/protected', authMiddleware, (req, res) => {
   res.json({ msg: `Welcome user ${req.user.id}` });
 });
+
+app.use('/api/neo', neo4jCoursesRoutes);
+
 
 // Start server
 const PORT = process.env.PORT;

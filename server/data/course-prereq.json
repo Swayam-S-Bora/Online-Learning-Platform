@@ -1,0 +1,11 @@
+[
+  { "courseCode": "CS102", "prereqCode": "CS101" },
+  { "courseCode": "CS103", "prereqCode": "CS101" },
+  { "courseCode": "CS104", "prereqCode": "CS103" },
+  { "courseCode": "CS105", "prereqCode": "CS102" },
+  { "courseCode": "CS106", "prereqCode": "CS105" },
+  { "courseCode": "CS107", "prereqCode": "CS102" },
+  { "courseCode": "CS108", "prereqCode": "CS101" },
+  { "courseCode": "CS109", "prereqCode": "CS104" },
+  { "courseCode": "CS110", "prereqCode": "CS108" }
+]
