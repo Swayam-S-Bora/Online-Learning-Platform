@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import axios from '../api/axios';  // Your custom axios with interceptor
+import { useEffect, useState } from 'react';
+import axios from '../api/axios';
 
 const CourseList = () => {
   const [courses, setCourses] = useState([]);
@@ -38,7 +38,7 @@ const CourseList = () => {
         ) : (
           courses.map((course) => (
             <li key={course._id}>
-              <strong>{course.title}</strong>
+              <strong>{course.courseCode} - {course.title}</strong>
               <p>{course.description}</p>
             </li>
           ))
